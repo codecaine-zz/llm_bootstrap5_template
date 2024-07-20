@@ -291,8 +291,16 @@
             });
 
             copyChatButton.addEventListener('click', function() {
-                const chatText = Array.from(chatContainer.querySelectorAll('.chat-message'))
-                    .map(msg => msg.textContent.trim())
+                const chatText = Array.from(chatContainer.querySelectorAll('.message-group'))
+                    .map(group => {
+                        const label = group.querySelector('.message-label').textContent;
+                        const messageElement = group.querySelector('.chat-message');
+                        const message = Array.from(messageElement.childNodes)
+                            .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName !== 'BUTTON')
+                            .map(node => node.textContent.trim())
+                            .join('');
+                        return `${label}: ${message}`;
+                    })
                     .join('\n\n');
                 navigator.clipboard.writeText(chatText).then(function() {
                     showNotification('Chat copied to clipboard!');
