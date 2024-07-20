@@ -32,3 +32,6 @@ To set up the Enhanced LLM Chat application, follow these simple steps:
     cd enhanced-llm-chat
     ```
 3. Open `index.html` in your preferred web browser to start using the application.
+
+# Screenshot   
+![image](preview.png)
