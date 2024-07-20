@@ -1,4 +1,4 @@
-**index.html - LLM Chat Template**
+**index.html - Enhanced Bootstrap 5 LLM Chat Template**
 
 This is a starter template for creating an LLM (Live Chat Messaging) application using Bootstrap 5. LLM is a popular chat system that allows real-time communication between users.
 
